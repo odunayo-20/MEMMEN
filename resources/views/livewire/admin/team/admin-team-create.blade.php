@@ -1,0 +1,118 @@
+
+
+
+        <!-- Content Start -->
+        <div class="content">
+            <!-- Navbar Start -->
+           @include('livewire.admin.includes.navbar')
+            <!-- Navbar End -->
+
+
+            <!-- Form Start -->
+            <div class="container-fluid pt-4 px-4">
+                <div class="row g-4">
+                    <form wire:submit='store'>
+
+                        <div class="col-sm-12 col-xl-12">
+                            <div class="bg-secondary rounded h-100 p-4">
+                                <h6 class="mb-4">Testimonial</h6>
+                                <div class="form-floating mb-3">
+                                    <input wire:model.defer='name' type="text" class="form-control" id="floatingInput"
+                                        >
+                                    <label for="floatingInput">Name</label>
+                                    @error('name')
+                                        <span class='text-danger'>{{ $message }}</span>
+                                    @enderror
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input wire:model.defer='profession' type="text" class="form-control" id="floatingPassword"
+                                        placeholder="profession">
+                                    <label for="floatingPassword">Profession</label>
+                                    @error('profession')
+                                    <span class='text-danger'>{{ $message }}</span>
+                                @enderror
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input wire:model.defer='facebook_link' type="text" class="form-control" id="floatingPassword"
+                                        placeholder="profession">
+                                    <label for="floatingPassword">Facebook Link</label>
+                                    @error('facebook_link')
+                                    <span class='text-danger'>{{ $message }}</span>
+                                @enderror
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input wire:model.defer='instagram_link' type="text" class="form-control" id="floatingPassword"
+                                        placeholder="instagram link">
+                                    <label for="floatingPassword">Instagram Link</label>
+                                    @error('instagram_link')
+                                    <span class='text-danger'>{{ $message }}</span>
+                                @enderror
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input wire:model.defer='twitter_link' type="text" class="form-control" id="floatingPassword"
+                                        placeholder="twitter link">
+                                    <label for="floatingPassword">Twitter Link</label>
+                                    @error('twitter_link')
+                                    <span class='text-danger'>{{ $message }}</span>
+                                @enderror
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <input wire:model.defer='linkedin_link' type="text" class="form-control" id="floatingPassword"
+                                        placeholder="linkedin link">
+                                    <label for="floatingPassword">Linkedin Link</label>
+                                    @error('linkedin_link')
+                                    <span class='text-danger'>{{ $message }}</span>
+                                @enderror
+                                </div>
+                                <div class="form-floating mb-3">
+                                    <select wire:model.defer='status' class="form-select" id="floatingSelect"
+                                        aria-label="Floating label select example">
+                                        <option selected>--SELECT STATUS--</option>
+                                        <option value="Active">Active</option>
+                                        <option value="Inactive">Inactive</option>
+                                    </select>
+                                    <label for="floatingSelect">Status</label>
+                                    @error('status')
+                                    <span class='text-danger'>{{ $message }}</span>
+                                @enderror
+
+                                </div>
+                                
+    
+                                
+                                <div class="my-3">
+                                    <input wire:model.defer='image' type="file" class="form-control " id="floatingPassword"
+                                        placeholder="textarea">
+                                        @error('image')
+                                        <span class='text-danger'>{{ $message }}</span>
+                                    @enderror
+                                    @if ($image)
+                                    <img style="width: 50px; height: 50px" src="{{$image->temporaryUrl() }}"
+                                        alt="">
+                                         
+                                @endif
+    
+                                </div>
+                                <div class='my-2'>
+                                    <button class="btn btn-primary ">Submit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                  
+                 
+                </div>
+            </div>
+            <!-- Form End -->
+
+
+            <!-- Footer Start -->
+          @include('livewire.admin.includes.footer')
+            <!-- Footer End -->
+        </div>
+        <!-- Content End -->
+
+
+    </div>
+
+  
